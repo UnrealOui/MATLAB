@@ -5,5 +5,5 @@ solg = solve(eqn,g)
 %% 2nd task
 syms x
 f = x^3*cos(x);
-int(f,x)
-ezplot(f,-20,20)
+intf = int(f,x)
+fplot(intf,[-20 20])
