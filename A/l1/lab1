@@ -1,6 +1,6 @@
 %% Praktiskais darbs #1
 %% Merijumu datu apstrade
-%% Andrejs Komisarovs
+%% Agija Bebriša
 A = imread('../a.png');
 B = imread('../b.png');
 figure(1),image(A);
