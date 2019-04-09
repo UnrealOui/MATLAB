@@ -32,7 +32,7 @@ for tolc=tol
     vvquad = 1/(t(end)-t(1))*quad(@sig,0,4);
     fprintf('|precizit=%0.d\t|vv=%f\t|\n',tolc,vvquad);
 end
-%% istas cidfejas vertibas aprekins
+%% istas videjas vertibas aprekins
 % lai iegutu isto videjo vertibu noteiktais integralis (vv.formula 1) ir
 % jaatrod ar simbolisko integresanu. Musu signals (no 3.lab darba) sastaves
 % no 5 posmiem. Katru posmu definet ka simbolisko mainigo pecattieciga
@@ -45,3 +45,14 @@ syms t2
 y2 = 3;
 int2 = int(y2,t2,2,4)
 vv_istaa = double(1/(4-0)*(int1+int2))
+%% efektivas vertibas aprekins
+t = 0:0.01:4;
+N = length(t);
+vv3a=1/(N-1)*sum(sig(t(1:end-1)))
+%%definesim jauno funkciju kas atgriezis sig(t) kavdrata
+% 1 variants - funkcija sig_kv
+% 2 variants 
+sig_kv2 = @(t) sig(t).^2;
+vv3a=sqrt(1/(N-1)*sum(sig_kv2(t(1:end-1))))
+% lidzigi varam modificet ari variantu ar quad
+vvquad = sqrt(1/(t(end)-t(1))*quad(sig_kv2,t(1),t(end)))

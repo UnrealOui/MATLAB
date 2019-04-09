@@ -1,0 +1,4 @@
+%% atskaites demo
+% 
+% <<../a.png>>
+%
